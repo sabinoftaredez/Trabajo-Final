@@ -1,0 +1,30 @@
+{
+  "name": "proyecto-nodo",
+  "version": "1.0.0",
+  "description": "\"Curso Full Stack\"",
+  "main": "\"index.mjs, app.mjs\"",
+  "scripts": {
+    "test": "\"jest, mocha\""
+  },
+  "keywords": [
+    "\"Nodo",
+    "Api",
+    "Sabino-Felipe-Tartaos-Aredez",
+    "Proyecto\""
+  ],
+  "author": "\"Sabino Felipe Tartalos Aredez\"",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-validator": "^7.2.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.26.0",
+    "jest": "^29.7.0",
+    "mocha": "^11.2.2"
+  }
+}

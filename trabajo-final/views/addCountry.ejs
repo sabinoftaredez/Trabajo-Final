@@ -1,0 +1,26 @@
+<h1>Agregar un Nuevo País</h1>
+<% if (errors && errors.length > 0) { %>
+  <ul class="error-messages">
+    <% errors.forEach((error) => { %>
+      <li><%= error %></li>
+    <% }) %>
+  </ul>
+<% } %>
+<form action="/countries" method="POST">
+  <label for="name">Nombre:</label>
+  <input type="text" id="name" name="name" value="<%= country?.name || '' %>" required>
+
+  <label for="capital">Capital:</label>
+  <input type="text" id="capital" name="capital" value="<%= Array.isArray(country.capital) ? country.capital.join(', ') : '' %>" required>
+
+  <label for="borders">Fronteras (separadas por comas):</label>
+  <input type="text" id="borders" name="borders" value="<%= Array.isArray(country.borders) ? country.borders.join(', ') : '' %>">
+
+  <label for="area">Área:</label>
+  <input type="number" id="area" name="area" value="<%= country?.area || '' %>" required>
+
+  <label for="population">Población:</label>
+  <input type="number" id="population" name="population" value="<%= country?.population || '' %>" required>
+
+  <button type="submit">Guardar</button>
+</form>

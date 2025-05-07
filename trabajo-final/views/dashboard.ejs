@@ -1,0 +1,52 @@
+<h1>Países Hispanohablantes</h1>
+<% if (errors && errors.length > 0) { %>
+  <ul class="error-messages">
+    <% errors.forEach((error) => { %>
+      <li><%= error %></li>
+    <% }) %>
+  </ul>
+<% } %>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Capital</th>
+      <th>Fronteras</th>
+      <th>Área</th>
+      <th>Población</th>
+      <th>Zonas Horarias</th>
+      <th>By</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% countries.forEach(country => { %>
+      <tr>
+        <td><%= country.name %></td>
+        <td><%= country.capital.join(', ') %></td>
+        <td><%= country.borders.join(', ') %></td>
+        <td><%= country.area %></td>
+        <td><%= country.population %></td>
+        <td><%= country.timezones.join(', ') %></td>
+        <td><%= country.creador %></td>
+        <td>
+          <a href="/countries/edit/<%= country._id %>" class="btn-edit">Editar</a>
+        </td>
+        <td>
+          <form action="/countries/<%= country._id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit" class="btn-delete">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">Totales</td>
+      <td><%= totalArea %></td>
+      <td><%= totalPopulation %></td>
+      <td colspan="3"></td>
+    </tr>
+  </tfoot>
+</table>
